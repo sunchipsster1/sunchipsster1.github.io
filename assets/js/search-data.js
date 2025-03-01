@@ -452,16 +452,16 @@ ninja.data = [{
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-outlandish",
+          title: 'Outlandish',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-learning-and-unlearning-fabricated-facts",
           title: 'Learning and unlearning fabricated facts',
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-outlandish",
-          title: 'Outlandish',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/outlandish/";
             },},{
         id: 'social-email',
         title: 'email',
