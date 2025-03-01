@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
+title: Event cells
 description: with background image
-img: assets/img/12.jpg
+img: assets/img/proj.png
 importance: 1
 category: work
 related_publications: true

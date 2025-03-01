@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: Learning and unlearning fabricated facts
+description: with background image
+img: assets/img/proj.png
 importance: 3
 category: fun
 ---
