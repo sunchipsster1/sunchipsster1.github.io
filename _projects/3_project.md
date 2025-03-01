@@ -3,8 +3,8 @@ layout: page
 title: Outlandish
 description: with background image
 img: assets/img/proj.png
-redirect: https://unsplash.com
-importance: 3
+#redirect: https://unsplash.com
+importance: 3x
 category: work
 ---
 
