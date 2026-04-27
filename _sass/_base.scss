@@ -1419,13 +1419,13 @@ figure.cover {
 }
 
 // ——————————————————————————————————————————
-// Custom design refinements
+// Custom design — typography, layout, cards
 // ——————————————————————————————————————————
 
-// Typography
+// Base typography
 body {
   font-family: "Inter", "Roboto", sans-serif;
-  line-height: 1.78;
+  line-height: 1.8;
   letter-spacing: -0.01em;
 }
 
@@ -1434,24 +1434,168 @@ h2,
 h3,
 h4 {
   font-family: "Lora", "Roboto Slab", Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
-// Glassmorphism navbar
+// ——— Navbar: glassmorphism ———
 .navbar {
   opacity: 1 !important;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.07) !important;
-  backdrop-filter: saturate(180%) blur(12px);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
-  background-color: rgba(253, 252, 251, 0.88) !important;
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07) !important;
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  background-color: rgba(253, 252, 251, 0.85) !important;
 }
 
 html[data-theme="dark"] .navbar {
-  background-color: rgba(18, 21, 30, 0.88) !important;
+  background-color: rgba(18, 21, 30, 0.85) !important;
 }
 
-// Refined card style
+// ——— About page: large, dramatic header ———
+.post .post-header {
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid var(--global-divider-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--global-theme-color);
+  }
+}
+
+.post h1.post-title {
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-family: "Lora", serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 0.5rem;
+
+  .font-weight-bold {
+    color: var(--global-theme-color);
+  }
+}
+
+.post p.desc {
+  font-size: 1.05rem;
+  color: var(--global-text-color-light);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-top: 0.2rem;
+}
+
+// Profile image ring
+.profile img {
+  box-shadow: 0 6px 32px rgba(86, 99, 176, 0.2);
+  border: 4px solid var(--global-bg-color);
+  outline: 2px solid rgba(86, 99, 176, 0.25);
+}
+
+// ——— Publications: card layout ———
+.publications {
+  h2.bibliography {
+    font-family: "Lora", serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--global-theme-color) !important;
+    border-top: none;
+    border-bottom: 2px solid var(--global-divider-color);
+    padding-top: 0;
+    padding-bottom: 0.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    letter-spacing: -0.02em;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--global-theme-color);
+    }
+  }
+
+  ol.bibliography {
+    li {
+      background: var(--global-card-bg-color);
+      border: 1px solid var(--global-divider-color);
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem 1.1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+      transition:
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+
+      &:hover {
+        box-shadow: 0 6px 24px rgba(86, 99, 176, 0.13);
+        border-color: rgba(86, 99, 176, 0.35);
+      }
+
+      .title {
+        font-size: 1.02rem;
+        font-weight: 600;
+        line-height: 1.45;
+        margin-bottom: 0.3rem;
+        font-family: "Inter", sans-serif;
+      }
+
+      .author {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 0.15rem;
+      }
+
+      .periodical {
+        font-size: 0.85rem;
+        color: var(--global-text-color-light);
+        font-style: italic;
+        margin-bottom: 0.1rem;
+      }
+
+      .links {
+        margin-top: 0.75rem;
+
+        a.btn {
+          border-radius: 20px;
+          font-size: 0.76rem;
+          padding: 0.18rem 0.85rem;
+          letter-spacing: 0.03em;
+          transition: all 0.15s ease;
+          margin-right: 0.2rem;
+          margin-bottom: 0.3rem;
+        }
+      }
+
+      .abbr {
+        margin-bottom: 0.6rem;
+
+        abbr {
+          border-radius: 5px;
+          padding: 3px 10px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+// ——— Cards (projects, repos) ———
 .card {
   border-radius: 14px !important;
   border: 1px solid var(--global-divider-color) !important;
@@ -1461,81 +1605,35 @@ html[data-theme="dark"] .navbar {
     transform 0.25s ease;
 }
 
-.projects a:hover .card,
-.featured-posts a:hover .card {
+.projects a:hover .card {
   box-shadow: 0 10px 32px rgba(86, 99, 176, 0.15);
   transform: translateY(-3px);
 }
 
-// Smoother link transitions
-a,
-table.table a {
-  transition: color 0.15s ease;
-}
+// ——— Blog header ———
+.header-bar {
+  border-bottom: 2px solid var(--global-divider-color);
 
-// Profile image — soft shadow and gentle border
-.profile img {
-  box-shadow: 0 8px 36px rgba(86, 99, 176, 0.18);
-  border: 3px solid rgba(86, 99, 176, 0.12);
-}
-
-// Publication link buttons — pill shaped, refined
-.publications ol.bibliography li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--global-divider-color);
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  .links a.btn {
-    border-radius: 20px;
-    font-size: 0.78rem;
-    padding: 0.2rem 0.9rem;
-    letter-spacing: 0.02em;
-    transition: all 0.15s ease;
-  }
-
-  .abbr abbr {
-    border-radius: 5px;
-    padding: 2px 8px;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    font-weight: 600;
-    text-transform: uppercase;
+  h1 {
+    font-family: "Lora", serif;
+    letter-spacing: -0.03em;
   }
 }
 
-// Slightly more breathing room on the about page
-.about .profile {
-  margin-bottom: 1.5rem;
+// ——— Social icons ———
+.social .contact-icons {
+  font-size: 3rem;
+  letter-spacing: 0.08rem;
 }
 
-// Footer refinement
+// ——— Footer ———
 footer.fixed-bottom,
 footer.sticky-bottom {
   letter-spacing: 0.01em;
 }
 
-// Header bar (blog page title)
-.header-bar h1 {
-  font-family: "Lora", serif;
-  letter-spacing: -0.03em;
-}
-
-// Subtle section separator lines
-.publications h2.bibliography,
-.projects h2.category {
-  font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--global-text-color-light) !important;
-}
-
-// Social icons spacing
-.social .contact-icons {
-  font-size: 3.2rem;
-  letter-spacing: 0.1rem;
+// ——— General link smoothing ———
+a,
+table.table a {
+  transition: color 0.15s ease;
 }
