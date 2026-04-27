@@ -1,9 +1,29 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"ICLR":
+  color: "#6b47a8"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICML":
+  color: "#c0562a"
 
-"Vision":
-  color: "#009f36"
+"NeurIPS":
+  color: "#2c6e49"
+
+"NeurIPS W":
+  color: "#4a7c65"
+
+"Science":
+  color: "#b5282a"
+
+"Cell":
+  color: "#e05c2a"
+
+"Neuron":
+  color: "#2980b9"
+
+"Nat. Neuro.":
+  color: "#1a6b5a"
+
+"PNAS":
+  color: "#1f4e79"
+
+"arXiv":
+  color: "#757575"
